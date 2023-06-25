@@ -34,13 +34,7 @@ int _printf(const char *format, ...)
 						n++;
 						break;
 					}
-				case 's':
-					{
-						char *str = va_arg(arg, char *);
-						fputs(str, stdout);
-						n += strlen(str);
-						break;
-					}
+			
 				default:
 					{
 						putchar('%');
