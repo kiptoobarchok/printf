@@ -21,22 +21,29 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	for (; *p ; p++)
+	while (*p)
 	{
 		if (*p != '%')
-		{
-			count += _putchar(*p);
-			continue;
+			{
+				count += _putchar(*p);
+			}
+		else
+			{
+				p++;
+
+				f = fmt(*p);
+
+				if (f)
+				{
+					count += f(args);
+				}
+				else
+				{
+					count += _printf("%%%c", *p);
+				}
+			}
+			p++;
 		}
-
-		p++;
-		
-		f = fmt(*p);
-
-		count += f ? f(args) : _printf("%%%c", *p);
-
-	}
 	va_end(args);
-
-	return (count);
+	return count;
 }
