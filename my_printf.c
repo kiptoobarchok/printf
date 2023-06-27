@@ -11,24 +11,32 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 
+	const char *p;
+
 	va_list args;
+
+	int (*f)(va_list args);
+	
+	p = format;
 
 	va_start(args, format);
 
-	while (*format)
+	for (; *p ; p++)
 	{
-		if (*format == '%')
+		if (*p != '%')
 		{
-			format++;
-			count += handle_format_specifier(&format, args);
+			count += _putchar(*p);
+			continue;
 		}
-		else
-		{
-			count += _putchar(*format);
-			format++;
-		}
-	}
 
+		p++;
+		
+		f = fmt(*p);
+
+		count += f ? f(args) : _printf("%%%c", *p);
+
+	}
 	va_end(args);
+
 	return (count);
 }
