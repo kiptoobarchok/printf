@@ -8,7 +8,7 @@ int _puts(const char *str)
 	{
 		str = "(null)";
 	}
-	while (*str != '\0')
+	while (*str)
 	{
 		putchar(*str);
 		str++;
