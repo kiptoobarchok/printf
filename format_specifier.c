@@ -5,11 +5,11 @@ int (*fmt(char c))(va_list args)
 	printer printer[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'%', print_pcnt}  //print %
+		{'%', print_pcnt}
 	};
 
-	int i;
-	for (i = 0; i < sizeof(printer)/ sizeof(printer[0]); i++)
+	int i, n;
+	for (i = 0; i < n; i++)
 		{
 			if (printer[i].c == c)
 			{
