@@ -8,7 +8,8 @@ int (*fmt(char c))(va_list args)
 		{'%', print_pcnt}
 	};
 
-	int i, n;
+	int i;
+	int n = 3;
 	for (i = 0; i < n; i++)
 		{
 			if (printer[i].c == c)

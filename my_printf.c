@@ -19,7 +19,9 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	if (!p || (p[0] == '%' && !p[1]))
+	{
 		return (-1);
+	}
 
 	while (*p)
 	{
@@ -45,5 +47,5 @@ int _printf(const char *format, ...)
 			p++;
 		}
 	va_end(args);
-	return count;
+	return (count);
 }
