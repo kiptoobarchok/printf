@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 int _puts(const char *str)
 {
@@ -6,10 +6,10 @@ int _puts(const char *str)
 
 	while (*str)
 	{
-		putchar(*str);
+		_putchar(*str);
 		str++;
 		chars_written++;
 	}
-	return chars_written;
+	return (chars_written);
 }
 
