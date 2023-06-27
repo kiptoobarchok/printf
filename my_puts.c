@@ -1,23 +1,15 @@
-#include <stdio.h>
+#include "main.h"
 
 int _puts(const char *str)
 {
 	int chars_written = 0;
 
-	if (!*str)
+	while (*str)
 	{
-		str = "(null)";
-	}
-	while (*str != '\0')
-	{
-		putchar(*str);
+		_putchar(*str);
 		str++;
 		chars_written++;
 	}
-	putchar('\n');
-
-	chars_written++;
-
-	return chars_written;
+	return (chars_written);
 }
 

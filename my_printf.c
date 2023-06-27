@@ -10,16 +10,18 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-
 	const char *p;
 
 	va_list args;
-
 	int (*f)(va_list args);
 
 	p = format;
-
 	va_start(args, format);
+
+	if (!p || (p[0] == '%' && !p[1]))
+	{
+		return (-1);
+	}
 
 	while (*p)
 	{
