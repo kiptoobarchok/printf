@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _puts - Prints a string.
+ * @str: The string to be printed
+ *
+ * Return: The number of characters printed
+ */
+
 int _puts(const char *str)
 {
 	int chars_written = 0;
@@ -12,4 +19,3 @@ int _puts(const char *str)
 	}
 	return (chars_written);
 }
-
