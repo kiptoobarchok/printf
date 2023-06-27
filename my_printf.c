@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	int (*f)(va_list args);
-	
+
 	p = format;
 
 	va_start(args, format);
@@ -24,26 +24,27 @@ int _printf(const char *format, ...)
 	while (*p)
 	{
 		if (*p != '%')
-			{
-				count += _putchar(*p);
-			}
-		else
-			{
-				p++;
-
-				f = fmt(*p);
-
-				if (f)
-				{
-					count += f(args);
-				}
-				else
-				{
-					count += _printf("%%%c", *p);
-				}
-			}
-			p++;
+		{
+			count += _putchar(*p);
 		}
+		else
+		{
+			p++;
+
+			f = fmt(*p);
+
+			if (f)
+			{
+				count += f(args);
+			}
+			else
+			{
+				count += _printf("%%%c", *p);
+			}
+		}
+		p++;
+	}
+
 	va_end(args);
-	return count;
+	return (count);
 }
