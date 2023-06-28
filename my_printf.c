@@ -29,22 +29,23 @@ int _printf(const char *format, ...)
 			count += _putchar(*p);
 		}
 		else
-			{
-				p++;
-
-				f = fmt(*p);
-
-				if (f)
-				{
-					count += f(args);
-				}
-				else
-				{
-					count += _printf("%%%c", *p);
-				}
-			}
+		{
 			p++;
+
+			f = fmt(*p);
+
+			if (f)
+			{
+				count += f(args);
+			}
+			else
+			{
+				count += _printf("%%%c", *p);
+			}
 		}
+		p++;
+	}
+
 	va_end(args);
 	return (count);
 }

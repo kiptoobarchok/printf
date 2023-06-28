@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * fmt - Selects the appropriate printing function based on format specifier.
+ * @c: The format specifier character.
+ *
+ * Return: POinter to corresponding printing function.
+ */
+
 int (*fmt(char c))(va_list args)
 {
 	printer printer[] = {
@@ -10,12 +17,14 @@ int (*fmt(char c))(va_list args)
 
 	int i;
 	int n = 3;
+
 	for (i = 0; i < n; i++)
+	{
+		if (printer[i].c == c)
 		{
-			if (printer[i].c == c)
-			{
-				return (printer[i].f);
-			}
+			return (printer[i].f);
 		}
+	}
+
 	return (NULL);
 }
