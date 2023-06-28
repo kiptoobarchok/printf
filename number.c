@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_digit(int i)
+int return_value(int i)
 {
 	unsigned int count;
 
@@ -11,7 +11,7 @@ int print_digit(int i)
 
 	while ( i / 10)
 	{
-		print_digit (i / 10);
+		return_value(i / 10);
 		count++;
 	}
 	_putchar ((i % 10) + '0');
