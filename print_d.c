@@ -24,7 +24,6 @@ int print_d(va_list args)
         n %= div;
         div /= 10;
     }
-
     return count;
 }
 
