@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+int print_unsigned_number(unsigned int n);
+int print_number(va_list args);
 int print_d(va_list args);
 int _printf(const char *format, ...);
 int digit_print(int c, int count);
