@@ -7,7 +7,7 @@
 int print_unsigned_number(unsigned int n);
 int print_number(va_list args);
 int print_d(va_list args);
-int _printf(const char *format, ...);
+int _printf(const char  *format, ...);
 int digit_print(int c, int count);
 int _putchar(char c);
 int _puts(const char *str);
@@ -28,7 +28,7 @@ typedef struct printer
 {
 	char c;
 	int (*f)(va_list args);
-} printer;
+}  printer;
 
 int (*fmt(char c))(va_list args);
 
