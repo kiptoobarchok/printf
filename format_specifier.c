@@ -14,7 +14,8 @@ int (*fmt(char c))(va_list args)
 		{'s', print_str},
 		{'%', print_pcnt},
 		{'d', print_d},
-		{'i', print_d}
+		{'i', print_d},
+		{'p', print_p}
 	};
 
 	int i;

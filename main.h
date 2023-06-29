@@ -11,10 +11,11 @@ int _printf(const char  *format, ...);
 int digit_print(int c, int count);
 int _putchar(char c);
 int _puts(const char *str);
-
+int print_hex(unsigned long int n);
 int print_char(va_list);
 int print_str(va_list);
 int print_pcnt(va_list);
+int print_p(va_list args);
 
 
 /**
