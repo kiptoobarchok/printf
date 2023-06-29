@@ -6,7 +6,7 @@
 
 int print_d(va_list args);
 int _printf(const char *format, ...);
-int digit_print(int c);
+int digit_print(int c, int count);
 int _putchar(char c);
 int _puts(const char *str);
 
