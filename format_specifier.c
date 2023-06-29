@@ -12,11 +12,13 @@ int (*fmt(char c))(va_list args)
 	printer printer[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'%', print_pcnt}
+		{'%', print_pcnt},
+		{'d', print_d},
+		{'i', print_d}
 	};
 
 	int i;
-	int n = 3;
+	int n = 5;
 
 	for (i = 0; i < n; i++)
 	{
