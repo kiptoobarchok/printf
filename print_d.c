@@ -2,35 +2,55 @@
 
 int print_d(va_list args)
 {
-    int a = va_arg(args, int);
-    unsigned int n = (a < 0) ? -a : a;
-    unsigned int x = 1;
+    int n = va_arg(args, int);
+    int div;
+    int count;
+    unsigned int num;
+   
+    div = 1;
+    count = 0;
 
-    while (n / 10)
+    if (n < 0)
     {
-        n = n / 10;
-        x++;
+        count += ('-');
+        num = n * -1;
+    }
+    else
+        num = n;
+
+    for (; num / div > 9; )
+        div *= 10;
+
+    for (; div != 0; )
+    {
+        count += _putchar('0' + num / div);
+        num %= div;
+        div /= 10;
     }
 
-    digit_print(a, 0);
-    return x;
+    return count;
 }
 
-int digit_print(int c, int count)
+int print_unsigned_number(unsigned int n)
 {
-    if (c < 0)
-    {
-        _putchar('-');
-        c = -c;
-    }
+    int div;
+    int count;
+    unsigned int num;
 
-    if (c / 10)
-    {
-        count = digit_print(c / 10, count);
-    }
+    div = 1;
+    count = 0;
 
-    _putchar((c % 10) + '0');
-    count++;
+    num = n;
+
+    for (; num / div > 9; )
+        div *= 10;
+
+    for (; div != 0; )
+    {
+        count += _putchar('0' + num / div);
+        num %= div;
+        div /= 10;
+    }
 
     return count;
 }
