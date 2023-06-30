@@ -8,7 +8,7 @@
 int main(void)
 {
     int len, len2;
-    int num = 998;
+    int num = -998;
 
     len = _printf("Length:[%d, %i]\n", num, num);
     len2 = printf("Length:[%d, %i]\n", num, num);
