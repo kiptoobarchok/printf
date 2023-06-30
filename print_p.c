@@ -36,34 +36,44 @@ int print_p(va_list args)
 	return (count + 2);
 }
 
+/**
+ * print_X - Prints an unsigned long integer in hexadecimal format (uppercase)
+ * @n: Unsigned long integer to be printed.
+ *
+ * Return: Number of characters printed.
+ */
+
 int print_X(unsigned long int n)
 {
-    int i;
-    int count;
-    unsigned int a = n;
+	int i;
+	int count;
+	unsigned int a = n;
 
-    int *array;
-    count = 0;
+	int *array;
 
-    while (n / 16 != 0)
-    {
-        n /= 16;
-        count++;
-    }
-    array = malloc(count * sizeof(int));
+	count = 0;
 
-    for (i = 0; i < count; i++) {
-        array[i] = a % 16;
-        a /= 16;
-    }
-    for (i = count - 1; i >= 0; i--) {
-        if (array[i] > 9) {
-            array[i] += 7;
-        }
-        _putchar(array[i] + '0');
-    }
+	while (n / 16 != 0)
+	{
+		n /= 16;
+		count++;
+	}
+	array = malloc(count * sizeof(int));
 
-    free(array);
-    return count;
+	for (i = 0; i < count; i++)
+	{
+		array[i] = a % 16;
+		a /= 16;
+	}
+	for (i = count - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+		{
+			array[i] += 7;
+		}
+	_putchar(array[i] + '0');
+	}
+
+	free(array);
+	return (count);
 }
-
