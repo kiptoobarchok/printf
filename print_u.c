@@ -35,8 +35,6 @@ int print_u(va_list args)
 		num /= 10;
 	}
 
-	num = n;
-
 	while (exp > 0)
 	{
 		digit = num / exp;
