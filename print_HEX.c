@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_HEX - prints an unsigned integer in hexadecimal format.
+ * @args: va_list arguments.
+ *
+ * Return: count.
+ */
+
 int print_HEX(va_list args)
 {
 	int i;
@@ -17,7 +24,7 @@ int print_HEX(va_list args)
 
 	count++;
 
-	array = malloc(count *(sizeof(int)));
+	array = malloc(count * (sizeof(int)));
 
 	for (i = 0; i < count; i++)
 	{
