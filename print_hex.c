@@ -8,39 +8,37 @@
  * Return: Number of characters printed
  */
 
-int print_hex(unsigned long int n, int base)
-{
-	unsigned long int e, f;
-	int count = 0;
+int print_hex(va_list args) {
+    int i;
+    int *array;
+    int counter = 0;
+    unsigned int num = va_arg(args, unsigned int);
+    unsigned int temp = num;
 
-	if (n <= 9)
-	{
-		_putchar(n + '0');
-		count++;
-		return (count);
-	}
+    if (num == 0) {
+        _putchar('0');
+        return 1;
+    }
 
-	if (n <= 15)
-	{
-		_putchar((n - 10) + (base ? 'a' : 'A'));
-	count++;
-	return (count);
-	}
+    while (temp != 0) {
+        temp /= 16;
+        counter++;
+    }
 
-	e = n / 16;
-	f = n % 16;
-	count += print_hex(e, base);
+    array = malloc(counter * sizeof(int));
 
-	if (f <= 9)
-	{
-	_putchar(f + '0');
-	count++;
-	}
-	else
-	{
-	_putchar((f - 10) + (base ? 'a' : 'A'));
-	count++;
-	}
+    for (i = 0; i < counter; i++) {
+        array[i] = num % 16;
+        num /= 16;
+    }
+    for (i = counter - 1; i >= 0; i--) {
+        if (array[i] <= 9) {
+            _putchar(array[i] + '0');
+        } else {
+            _putchar(array[i] - 10 + 'A');
+        }
+    }
 
-	return (count);
+    free(array);
+    return counter;
 }

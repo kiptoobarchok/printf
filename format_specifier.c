@@ -15,11 +15,14 @@ int (*fmt(char c))(va_list args)
 		{'%', print_pcnt},
 		{'d', print_d},
 		{'i', print_d},
-		{'p', print_p}
+		{'p', print_p},
+		{'x', print_hex},
+		{'X', print_HEX},
+		{'u', print_u}
 	};
 
 	int i;
-	int n = 5;
+	int n = 9;
 
 	for (i = 0; i < n; i++)
 	{
